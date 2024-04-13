@@ -2,7 +2,9 @@ import random
 from django.shortcuts import render
 from .models import Usuario
 from .models import *
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def upload_file(request):
         
 
