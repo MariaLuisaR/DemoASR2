@@ -1,20 +1,14 @@
+import random
 from django.shortcuts import render
 from .models import Usuario
+from .models import *
 
 def upload_file(request):
-    # Fetch the user details for ID 1020
+        
+
     user_name = None
     user_estado = None
     error_message = None
-    try:
-        user = Usuario.objects.get(id=1020)
-        user.estado = "Aprobado"
-        user.save()
-        user_name = user.nombre
-        user_estado = user.estado
-    except Usuario.DoesNotExist:
-        error_message = 'Usuario con ID 1020 no encontrado.'
-    
     usuarios = Usuario.objects.all()
 
     if request.method == 'POST':
